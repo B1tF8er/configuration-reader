@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E5890A07-0B62-4E52-A5DB-BA72048FD721}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configuration.Reader", "src\Configuration.Reader\Configuration.Reader.csproj", "{4A736E93-6506-4DB9-8721-E068442FE581}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A736E93-6506-4DB9-8721-E068442FE581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A736E93-6506-4DB9-8721-E068442FE581}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A736E93-6506-4DB9-8721-E068442FE581}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A736E93-6506-4DB9-8721-E068442FE581}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4A736E93-6506-4DB9-8721-E068442FE581} = {E5890A07-0B62-4E52-A5DB-BA72048FD721}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F105868-B487-4A27-A053-1F02D3FBBCF5}
+	EndGlobalSection
+EndGlobal
