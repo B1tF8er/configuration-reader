@@ -36,5 +36,14 @@
 
 		public static SettingResponse<string> TryGetStringSetting(this string key)
 			=> key.TryGetSetting(StringParser.Parse);
+
+		public static SettingResponse<uint> TryGetUIntSetting(this string key)
+			=> key.TryGetSetting(UIntParser.Parse);
+
+		public static SettingResponse<ulong> TryGetULongSetting(this string key)
+			=> key.TryGetSetting(ULongParser.Parse);
+
+		public static SettingResponse<ushort> TryGetUShortSetting(this string key)
+			=> key.TryGetSetting(UShortParser.Parse);
 	}
 }
