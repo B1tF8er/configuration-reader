@@ -1,7 +1,7 @@
-using Xunit;
-
 namespace Configuration.Reader.Tests
 {
+    using Xunit;
+
     public class ConfigurationManagerExtensionsShould
     {
         [Fact]
