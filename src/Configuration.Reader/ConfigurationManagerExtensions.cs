@@ -15,10 +15,9 @@
 
 			var settingResponse = parser(configurationValue);
 
-			if (!settingResponse.IsParsed)
-				return new SettingResponse<TValue>($"The configuration value for key: {key.ToUpper()} could not be parsed.");
-
-			return settingResponse;
+			return settingResponse.IsParsed
+				? settingResponse
+				: new SettingResponse<TValue>($"The configuration value for key: {key.ToUpper()} could not be parsed.");
 		}
 	}
 }
