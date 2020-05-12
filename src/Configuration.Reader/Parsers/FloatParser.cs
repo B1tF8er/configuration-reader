@@ -5,7 +5,8 @@
     internal static class FloatParser
     {
         internal static Func<string, SettingResponse<float>> Parse =>
-            (configurationValue) => {
+            (configurationValue) =>
+            {
                 var parsed = float.TryParse(configurationValue, out var someFloat);
                 return new SettingResponse<float>(parsed, someFloat);
             };

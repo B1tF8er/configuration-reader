@@ -5,7 +5,8 @@
     internal static class StringParser
     {
         internal static Func<string, SettingResponse<string>> Parse =>
-            (configurationValue) => {
+            (configurationValue) =>
+            {
                 return new SettingResponse<string>(true, configurationValue);
             };
     }

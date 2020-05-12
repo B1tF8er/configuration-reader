@@ -5,7 +5,8 @@
     internal static class BoolParser
     {
         internal static Func<string, SettingResponse<bool>> Parse =>
-            (configurationValue) => {
+            (configurationValue) =>
+            {
                 var parsed = bool.TryParse(configurationValue, out var someBool);
                 return new SettingResponse<bool>(parsed, someBool);
             };

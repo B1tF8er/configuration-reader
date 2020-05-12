@@ -5,7 +5,8 @@
     internal static class ByteParser
     {
         internal static Func<string, SettingResponse<byte>> Parse =>
-            (configurationValue) => {
+            (configurationValue) =>
+            {
                 var parsed = byte.TryParse(configurationValue, out var someByte);
                 return new SettingResponse<byte>(parsed, someByte);
             };
