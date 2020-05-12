@@ -8,7 +8,7 @@
             (configurationValue) =>
             {
                 var parsed = long.TryParse(configurationValue, out var someLong);
-                return new SettingResponse<long>(parsed, someLong);
+                return SettingResponse<long>.Create(parsed, someLong);
             };
     }
 }

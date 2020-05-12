@@ -8,7 +8,7 @@
             (configurationValue) =>
             {
                 var parsed = sbyte.TryParse(configurationValue, out var someSByte);
-                return new SettingResponse<sbyte>(parsed, someSByte);
+                return SettingResponse<sbyte>.Create(parsed, someSByte);
             };
     }
 }

@@ -8,7 +8,7 @@
             (configurationValue) =>
             {
                 var parsed = uint.TryParse(configurationValue, out var someUInt);
-                return new SettingResponse<uint>(parsed, someUInt);
+                return SettingResponse<uint>.Create(parsed, someUInt);
             };
     }
 }

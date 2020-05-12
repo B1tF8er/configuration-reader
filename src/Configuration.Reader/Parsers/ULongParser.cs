@@ -8,7 +8,7 @@
             (configurationValue) =>
             {
                 var parsed = ulong.TryParse(configurationValue, out var someULong);
-                return new SettingResponse<ulong>(parsed, someULong);
+                return SettingResponse<ulong>.Create(parsed, someULong);
             };
     }
 }

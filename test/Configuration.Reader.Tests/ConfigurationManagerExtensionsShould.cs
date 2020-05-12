@@ -9,7 +9,7 @@
         [TestMethod]
         public void GetBoolSetting()
         {
-            var expected = new SettingResponse<bool>(true, true);
+            var expected = SettingResponse<bool>.Create(true, true);
 
             var actual = "Boolean_Test_One".TryGetBoolSetting();
 
@@ -19,7 +19,7 @@
         [TestMethod]
         public void GetByteSetting()
         {
-            var expected = new SettingResponse<byte>(true, 0123);
+            var expected = SettingResponse<byte>.Create(true, 0123);
 
             var actual = "Byte_Test_One".TryGetByteSetting();
 
@@ -29,7 +29,7 @@
         [TestMethod]
         public void GetCharSetting()
         {
-            var expected = new SettingResponse<char>(true, 'a');
+            var expected = SettingResponse<char>.Create(true, 'a');
 
             var actual = "Char_Test_One".TryGetCharSetting();
 
@@ -39,7 +39,7 @@
         [TestMethod]
         public void GetDecimalSetting()
         {
-            var expected = new SettingResponse<decimal>(true, 1.9M);
+            var expected = SettingResponse<decimal>.Create(true, 1.9M);
 
             var actual = "Decimal_Test_One".TryGetDecimalSetting();
 
@@ -49,7 +49,7 @@
         [TestMethod]
         public void GetDoubleSetting()
         {
-            var expected = new SettingResponse<double>(true, 2.9D);
+            var expected = SettingResponse<double>.Create(true, 2.9D);
 
             var actual = "Double_Test_One".TryGetDoubleSetting();
 
@@ -59,7 +59,7 @@
         [TestMethod]
         public void GetFloatSetting()
         {
-            var expected = new SettingResponse<float>(true, 3.9F);
+            var expected = SettingResponse<float>.Create(true, 3.9F);
 
             var actual = "Float_Test_One".TryGetFloatSetting();
 
@@ -69,7 +69,7 @@
         [TestMethod]
         public void GetIntSetting()
         {
-            var expected = new SettingResponse<int>(true, 4);
+            var expected = SettingResponse<int>.Create(true, 4);
 
             var actual = "Int_Test_One".TryGetIntSetting();
 
@@ -79,7 +79,7 @@
         [TestMethod]
         public void GetLongSetting()
         {
-            var expected = new SettingResponse<long>(true, 5L);
+            var expected = SettingResponse<long>.Create(true, 5L);
 
             var actual = "Long_Test_One".TryGetLongSetting();
 
@@ -89,7 +89,7 @@
         [TestMethod]
         public void GetSByteSetting()
         {
-            var expected = new SettingResponse<sbyte>(true, 0123);
+            var expected = SettingResponse<sbyte>.Create(true, 0123);
 
             var actual = "SByte_Test_One".TryGetSByteSetting();
 
@@ -99,7 +99,7 @@
         [TestMethod]
         public void GetShortSetting()
         {
-            var expected = new SettingResponse<short>(true, 6);
+            var expected = SettingResponse<short>.Create(true, 6);
 
             var actual = "Short_Test_One".TryGetShortSetting();
 
@@ -109,7 +109,7 @@
         [TestMethod]
         public void GetStringSetting()
         {
-            var expected = new SettingResponse<string>(true, "test");
+            var expected = SettingResponse<string>.Create(true, "test");
 
             var actual = "String_Test_One".TryGetStringSetting();
 
@@ -119,7 +119,7 @@
         [TestMethod]
         public void GetUIntSetting()
         {
-            var expected = new SettingResponse<uint>(true, 7);
+            var expected = SettingResponse<uint>.Create(true, 7);
 
             var actual = "UInt_Test_One".TryGetUIntSetting();
 
@@ -129,7 +129,7 @@
         [TestMethod]
         public void GetULongSetting()
         {
-            var expected = new SettingResponse<ulong>(true, 8L);
+            var expected = SettingResponse<ulong>.Create(true, 8L);
 
             var actual = "ULong_Test_One".TryGetULongSetting();
 
@@ -139,7 +139,7 @@
         [TestMethod]
         public void GetUShortSetting()
         {
-            var expected = new SettingResponse<ushort>(true, 9);
+            var expected = SettingResponse<ushort>.Create(true, 9);
 
             var actual = "UShort_Test_One".TryGetUShortSetting();
 
@@ -150,8 +150,7 @@
         public void NotFindInvalidKey()
         {
             var key = "Test";
-            var error = $"The key: {key.ToUpper()} does not exist in the configuration file.";
-            var expected = new SettingResponse<ushort>(error);
+            var expected = SettingResponse<ushort>.Create(key.DoesNotExist());
 
             var actual = key.TryGetUShortSetting();
 
@@ -162,8 +161,7 @@
         public void NotParseInvalidValue()
         {
             var key = "Char_Test_One";
-            var error = $"The configuration value for key: {key.ToUpper()} could not be parsed.";
-            var expected = new SettingResponse<bool>(error);
+            var expected = SettingResponse<bool>.Create(key.ValueNotParsed());
 
             var actual = key.TryGetBoolSetting();
 

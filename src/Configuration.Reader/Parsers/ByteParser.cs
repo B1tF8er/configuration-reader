@@ -8,7 +8,7 @@
             (configurationValue) =>
             {
                 var parsed = byte.TryParse(configurationValue, out var someByte);
-                return new SettingResponse<byte>(parsed, someByte);
+                return SettingResponse<byte>.Create(parsed, someByte);
             };
     }
 }

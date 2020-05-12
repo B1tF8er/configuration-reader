@@ -8,7 +8,7 @@
             (configurationValue) =>
             {
                 var parsed = int.TryParse(configurationValue, out var someInt);
-                return new SettingResponse<int>(parsed, someInt);
+                return SettingResponse<int>.Create(parsed, someInt);
             };
     }
 }

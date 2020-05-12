@@ -7,7 +7,7 @@
         internal static Func<string, SettingResponse<string>> Parse =>
             (configurationValue) =>
             {
-                return new SettingResponse<string>(true, configurationValue);
+                return SettingResponse<string>.Create(true, configurationValue);
             };
     }
 }

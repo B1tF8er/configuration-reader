@@ -8,7 +8,7 @@
             (configurationValue) =>
             {
                 var parsed = double.TryParse(configurationValue, out var someDouble);
-                return new SettingResponse<double>(parsed, someDouble);
+                return SettingResponse<double>.Create(parsed, someDouble);
             };
     }
 }

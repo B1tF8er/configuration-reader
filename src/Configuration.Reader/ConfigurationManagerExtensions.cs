@@ -11,13 +11,13 @@
             var configurationValue = ConfigurationManager.AppSettings[key];
 
             if (configurationValue is null)
-                return new SettingResponse<TValue>($"The key: {key.ToUpper()} does not exist in the configuration file.");
+                return SettingResponse<TValue>.Create(key.DoesNotExist());
 
             var settingResponse = parser(configurationValue);
 
             return settingResponse.IsParsed
                 ? settingResponse
-                : new SettingResponse<TValue>($"The configuration value for key: {key.ToUpper()} could not be parsed.");
+                : SettingResponse<TValue>.Create(key.ValueNotParsed());
         }
     }
 }

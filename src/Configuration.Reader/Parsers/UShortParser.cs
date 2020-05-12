@@ -8,7 +8,7 @@
             (configurationValue) =>
             {
                 var parsed = ushort.TryParse(configurationValue, out var someUShort);
-                return new SettingResponse<ushort>(parsed, someUShort);
+                return SettingResponse<ushort>.Create(parsed, someUShort);
             };
     }
 }

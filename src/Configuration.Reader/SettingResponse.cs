@@ -2,17 +2,23 @@
 {
     public class SettingResponse<TValue>
     {
-        public bool IsParsed { get; set; }
+        public bool IsParsed { get; }
 
-        public TValue Value { get; set; }
+        public TValue Value { get; }
 
-        public string Error { get; set; }
+        public string Error { get; }
 
-        public SettingResponse(bool isParsed, TValue value) =>
+        private SettingResponse(bool isParsed, TValue value) =>
             (IsParsed, Value) = (isParsed, value);
 
-        public SettingResponse(string error) =>
+        private SettingResponse(string error) =>
             (IsParsed, Error) = (false, error);
+
+        public static SettingResponse<TValue> Create(bool isParsed, TValue value) =>
+            new SettingResponse<TValue>(isParsed, value);
+
+        public static SettingResponse<TValue> Create(string error) =>
+            new SettingResponse<TValue>(error);
 
         public override string ToString() =>
             $"IsParsed: {IsParsed} -- Value: {Value} -- Error: {Error}";

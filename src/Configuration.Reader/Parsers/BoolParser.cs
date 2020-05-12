@@ -8,7 +8,7 @@
             (configurationValue) =>
             {
                 var parsed = bool.TryParse(configurationValue, out var someBool);
-                return new SettingResponse<bool>(parsed, someBool);
+                return SettingResponse<bool>.Create(parsed, someBool);
             };
     }
 }

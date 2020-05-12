@@ -8,7 +8,7 @@
             (configurationValue) =>
             {
                 var parsed = float.TryParse(configurationValue, out var someFloat);
-                return new SettingResponse<float>(parsed, someFloat);
+                return SettingResponse<float>.Create(parsed, someFloat);
             };
     }
 }

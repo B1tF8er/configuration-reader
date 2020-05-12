@@ -8,7 +8,7 @@
             (configurationValue) =>
             {
                 var parsed = decimal.TryParse(configurationValue, out var someDecimal);
-                return new SettingResponse<decimal>(parsed, someDecimal);
+                return SettingResponse<decimal>.Create(parsed, someDecimal);
             };
     }
 }

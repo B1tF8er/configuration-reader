@@ -8,7 +8,7 @@
             (configurationValue) =>
             {
                 var parsed = char.TryParse(configurationValue, out var someChar);
-                return new SettingResponse<char>(parsed, someChar);
+                return SettingResponse<char>.Create(parsed, someChar);
             };
     }
 }
