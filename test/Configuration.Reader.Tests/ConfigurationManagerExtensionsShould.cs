@@ -12,9 +12,7 @@
 
             var actual = ConfigurationManagerExtensions.TryGetBoolSetting("Boolean_Test_One");
 
-            Assert.AreEqual(expected.IsParsed, actual.IsParsed);
-            Assert.AreEqual(expected.Value, actual.Value);
-            Assert.AreEqual(expected.Error, actual.Error);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -24,9 +22,7 @@
 
             var actual = ConfigurationManagerExtensions.TryGetByteSetting("Byte_Test_One");
 
-            Assert.AreEqual(expected.IsParsed, actual.IsParsed);
-            Assert.AreEqual(expected.Value, actual.Value);
-            Assert.AreEqual(expected.Error, actual.Error);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -36,9 +32,7 @@
 
             var actual = ConfigurationManagerExtensions.TryGetCharSetting("Char_Test_One");
 
-            Assert.AreEqual(expected.IsParsed, actual.IsParsed);
-            Assert.AreEqual(expected.Value, actual.Value);
-            Assert.AreEqual(expected.Error, actual.Error);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -48,9 +42,7 @@
 
             var actual = ConfigurationManagerExtensions.TryGetDecimalSetting("Decimal_Test_One");
 
-            Assert.AreEqual(expected.IsParsed, actual.IsParsed);
-            Assert.AreEqual(expected.Value, actual.Value);
-            Assert.AreEqual(expected.Error, actual.Error);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -60,9 +52,7 @@
 
             var actual = ConfigurationManagerExtensions.TryGetDoubleSetting("Double_Test_One");
 
-            Assert.AreEqual(expected.IsParsed, actual.IsParsed);
-            Assert.AreEqual(expected.Value, actual.Value);
-            Assert.AreEqual(expected.Error, actual.Error);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -72,21 +62,17 @@
 
             var actual = ConfigurationManagerExtensions.TryGetFloatSetting("Float_Test_One");
 
-            Assert.AreEqual(expected.IsParsed, actual.IsParsed);
-            Assert.AreEqual(expected.Value, actual.Value);
-            Assert.AreEqual(expected.Error, actual.Error);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void TryGetIntSetting()
         {
-            var expected = new SettingResponse<float>(true, 4);
+            var expected = new SettingResponse<int>(true, 4);
 
             var actual = ConfigurationManagerExtensions.TryGetIntSetting("Int_Test_One");
 
-            Assert.AreEqual(expected.IsParsed, actual.IsParsed);
-            Assert.AreEqual(expected.Value, actual.Value);
-            Assert.AreEqual(expected.Error, actual.Error);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -96,9 +82,7 @@
 
             var actual = ConfigurationManagerExtensions.TryGetLongSetting("Long_Test_One");
 
-            Assert.AreEqual(expected.IsParsed, actual.IsParsed);
-            Assert.AreEqual(expected.Value, actual.Value);
-            Assert.AreEqual(expected.Error, actual.Error);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -108,9 +92,7 @@
 
             var actual = ConfigurationManagerExtensions.TryGetSByteSetting("SByte_Test_One");
 
-            Assert.AreEqual(expected.IsParsed, actual.IsParsed);
-            Assert.AreEqual(expected.Value, actual.Value);
-            Assert.AreEqual(expected.Error, actual.Error);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -120,9 +102,7 @@
 
             var actual = ConfigurationManagerExtensions.TryGetShortSetting("Short_Test_One");
 
-            Assert.AreEqual(expected.IsParsed, actual.IsParsed);
-            Assert.AreEqual(expected.Value, actual.Value);
-            Assert.AreEqual(expected.Error, actual.Error);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -132,9 +112,7 @@
 
             var actual = ConfigurationManagerExtensions.TryGetStringSetting("String_Test_One");
 
-            Assert.AreEqual(expected.IsParsed, actual.IsParsed);
-            Assert.AreEqual(expected.Value, actual.Value);
-            Assert.AreEqual(expected.Error, actual.Error);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -144,9 +122,7 @@
 
             var actual = ConfigurationManagerExtensions.TryGetUIntSetting("UInt_Test_One");
 
-            Assert.AreEqual(expected.IsParsed, actual.IsParsed);
-            Assert.AreEqual(expected.Value, actual.Value);
-            Assert.AreEqual(expected.Error, actual.Error);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -156,9 +132,7 @@
 
             var actual = ConfigurationManagerExtensions.TryGetULongSetting("ULong_Test_One");
 
-            Assert.AreEqual(expected.IsParsed, actual.IsParsed);
-            Assert.AreEqual(expected.Value, actual.Value);
-            Assert.AreEqual(expected.Error, actual.Error);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -168,9 +142,7 @@
 
             var actual = ConfigurationManagerExtensions.TryGetUShortSetting("UShort_Test_One");
 
-            Assert.AreEqual(expected.IsParsed, actual.IsParsed);
-            Assert.AreEqual(expected.Value, actual.Value);
-            Assert.AreEqual(expected.Error, actual.Error);
+            Assert.AreEqual(expected, actual);
         }
     }
 }
