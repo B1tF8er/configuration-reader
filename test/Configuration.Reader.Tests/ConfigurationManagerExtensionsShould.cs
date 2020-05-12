@@ -11,7 +11,7 @@
         {
             var expected = SettingResponse<bool>.Create(true, true);
 
-            var actual = "Boolean_Test_One".TryGetBoolSetting();
+            var actual = "Boolean".TryGetBoolSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -21,7 +21,7 @@
         {
             var expected = SettingResponse<byte>.Create(true, 0123);
 
-            var actual = "Byte_Test_One".TryGetByteSetting();
+            var actual = "Byte".TryGetByteSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -31,7 +31,7 @@
         {
             var expected = SettingResponse<char>.Create(true, 'a');
 
-            var actual = "Char_Test_One".TryGetCharSetting();
+            var actual = "Char".TryGetCharSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -41,7 +41,7 @@
         {
             var expected = SettingResponse<decimal>.Create(true, 1.9M);
 
-            var actual = "Decimal_Test_One".TryGetDecimalSetting();
+            var actual = "Decimal".TryGetDecimalSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -51,7 +51,7 @@
         {
             var expected = SettingResponse<double>.Create(true, 2.9D);
 
-            var actual = "Double_Test_One".TryGetDoubleSetting();
+            var actual = "Double".TryGetDoubleSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -61,7 +61,7 @@
         {
             var expected = SettingResponse<float>.Create(true, 3.9F);
 
-            var actual = "Float_Test_One".TryGetFloatSetting();
+            var actual = "Float".TryGetFloatSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -71,7 +71,7 @@
         {
             var expected = SettingResponse<int>.Create(true, 4);
 
-            var actual = "Int_Test_One".TryGetIntSetting();
+            var actual = "Int".TryGetIntSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -81,7 +81,7 @@
         {
             var expected = SettingResponse<long>.Create(true, 5L);
 
-            var actual = "Long_Test_One".TryGetLongSetting();
+            var actual = "Long".TryGetLongSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -91,7 +91,7 @@
         {
             var expected = SettingResponse<sbyte>.Create(true, 0123);
 
-            var actual = "SByte_Test_One".TryGetSByteSetting();
+            var actual = "SByte".TryGetSByteSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -101,7 +101,7 @@
         {
             var expected = SettingResponse<short>.Create(true, 6);
 
-            var actual = "Short_Test_One".TryGetShortSetting();
+            var actual = "Short".TryGetShortSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -111,7 +111,7 @@
         {
             var expected = SettingResponse<string>.Create(true, "test");
 
-            var actual = "String_Test_One".TryGetStringSetting();
+            var actual = "String".TryGetStringSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -121,7 +121,7 @@
         {
             var expected = SettingResponse<uint>.Create(true, 7);
 
-            var actual = "UInt_Test_One".TryGetUIntSetting();
+            var actual = "UInt".TryGetUIntSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -131,7 +131,7 @@
         {
             var expected = SettingResponse<ulong>.Create(true, 8L);
 
-            var actual = "ULong_Test_One".TryGetULongSetting();
+            var actual = "ULong".TryGetULongSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -141,7 +141,7 @@
         {
             var expected = SettingResponse<ushort>.Create(true, 9);
 
-            var actual = "UShort_Test_One".TryGetUShortSetting();
+            var actual = "UShort".TryGetUShortSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -160,7 +160,7 @@
         [TestMethod]
         public void NotParseInvalidValue()
         {
-            var key = "Char_Test_One";
+            var key = "Char";
             var expected = SettingResponse<bool>.Create(key.ValueNotParsed());
 
             var actual = key.TryGetBoolSetting();
