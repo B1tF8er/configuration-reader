@@ -1,146 +1,171 @@
 ﻿namespace Configuration.Reader.Tests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using static ConfigurationManagerExtensions;
 
     [TestClass]
     public class ConfigurationManagerExtensionsShould
     {
         [TestMethod]
-        public void TryGetBoolSetting()
+        public void GetBoolSetting()
         {
             var expected = new SettingResponse<bool>(true, true);
 
-            var actual = ConfigurationManagerExtensions.TryGetBoolSetting("Boolean_Test_One");
+            var actual = "Boolean_Test_One".TryGetBoolSetting();
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void TryGetByteSetting()
+        public void GetByteSetting()
         {
             var expected = new SettingResponse<byte>(true, 0123);
 
-            var actual = ConfigurationManagerExtensions.TryGetByteSetting("Byte_Test_One");
+            var actual = "Byte_Test_One".TryGetByteSetting();
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void TryGetCharSetting()
+        public void GetCharSetting()
         {
             var expected = new SettingResponse<char>(true, 'a');
 
-            var actual = ConfigurationManagerExtensions.TryGetCharSetting("Char_Test_One");
+            var actual = "Char_Test_One".TryGetCharSetting();
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void TryGetDecimalSetting()
+        public void GetDecimalSetting()
         {
             var expected = new SettingResponse<decimal>(true, 1.9M);
 
-            var actual = ConfigurationManagerExtensions.TryGetDecimalSetting("Decimal_Test_One");
+            var actual = "Decimal_Test_One".TryGetDecimalSetting();
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void TryGetDoubleSetting()
+        public void GetDoubleSetting()
         {
             var expected = new SettingResponse<double>(true, 2.9D);
 
-            var actual = ConfigurationManagerExtensions.TryGetDoubleSetting("Double_Test_One");
+            var actual = "Double_Test_One".TryGetDoubleSetting();
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void TryGetFloatSetting()
+        public void GetFloatSetting()
         {
             var expected = new SettingResponse<float>(true, 3.9F);
 
-            var actual = ConfigurationManagerExtensions.TryGetFloatSetting("Float_Test_One");
+            var actual = "Float_Test_One".TryGetFloatSetting();
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void TryGetIntSetting()
+        public void GetIntSetting()
         {
             var expected = new SettingResponse<int>(true, 4);
 
-            var actual = ConfigurationManagerExtensions.TryGetIntSetting("Int_Test_One");
+            var actual = "Int_Test_One".TryGetIntSetting();
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void TryGetLongSetting()
+        public void GetLongSetting()
         {
             var expected = new SettingResponse<long>(true, 5L);
 
-            var actual = ConfigurationManagerExtensions.TryGetLongSetting("Long_Test_One");
+            var actual = "Long_Test_One".TryGetLongSetting();
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void TryGetSByteSetting()
+        public void GetSByteSetting()
         {
             var expected = new SettingResponse<sbyte>(true, 0123);
 
-            var actual = ConfigurationManagerExtensions.TryGetSByteSetting("SByte_Test_One");
+            var actual = "SByte_Test_One".TryGetSByteSetting();
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void TryGetShortSetting()
+        public void GetShortSetting()
         {
             var expected = new SettingResponse<short>(true, 6);
 
-            var actual = ConfigurationManagerExtensions.TryGetShortSetting("Short_Test_One");
+            var actual = "Short_Test_One".TryGetShortSetting();
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void TryGetStringSetting()
+        public void GetStringSetting()
         {
             var expected = new SettingResponse<string>(true, "test");
 
-            var actual = ConfigurationManagerExtensions.TryGetStringSetting("String_Test_One");
+            var actual = "String_Test_One".TryGetStringSetting();
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void TryGetUIntSetting()
+        public void GetUIntSetting()
         {
             var expected = new SettingResponse<uint>(true, 7);
 
-            var actual = ConfigurationManagerExtensions.TryGetUIntSetting("UInt_Test_One");
+            var actual = "UInt_Test_One".TryGetUIntSetting();
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void TryGetULongSetting()
+        public void GetULongSetting()
         {
             var expected = new SettingResponse<ulong>(true, 8L);
 
-            var actual = ConfigurationManagerExtensions.TryGetULongSetting("ULong_Test_One");
+            var actual = "ULong_Test_One".TryGetULongSetting();
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void TryGetUShortSetting()
+        public void GetUShortSetting()
         {
             var expected = new SettingResponse<ushort>(true, 9);
 
-            var actual = ConfigurationManagerExtensions.TryGetUShortSetting("UShort_Test_One");
+            var actual = "UShort_Test_One".TryGetUShortSetting();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void NotFindInvalidKey()
+        {
+            var key = "Test";
+            var error = $"The key: {key.ToUpper()} does not exist in the configuration file.";
+            var expected = new SettingResponse<ushort>(error);
+
+            var actual = key.TryGetUShortSetting();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void NotParseInvalidValue()
+        {
+            var key = "Char_Test_One";
+            var error = $"The configuration value for key: {key.ToUpper()} could not be parsed.";
+            var expected = new SettingResponse<bool>(error);
+
+            var actual = key.TryGetBoolSetting();
 
             Assert.AreEqual(expected, actual);
         }

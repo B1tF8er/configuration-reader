@@ -11,7 +11,7 @@
 			var configurationValue = ConfigurationManager.AppSettings[key];
 
 			if (configurationValue is null)
-				return new SettingResponse<TValue>("The key does not exist in the configuration file.");
+				return new SettingResponse<TValue>($"The key: {key.ToUpper()} does not exist in the configuration file.");
 
 			var settingResponse = parser(configurationValue);
 
