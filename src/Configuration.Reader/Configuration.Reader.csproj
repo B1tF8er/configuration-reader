@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
+    <Authors>Jorge Yañez</Authors>
+    <Description>Configuration Reader for .NET Framework applications</Description>
+    <PackageVersion>0.0.0</PackageVersion>
+    <PackageProjectUrl>https://github.com/B1tF8er/configuration-reader</PackageProjectUrl>
+    <PackageLicense>https://github.com/B1tF8er/configuration-reader/blob/master/LICENSE</PackageLicense>
+    <RepositoryUrl>https://github.com/B1tF8er/configuration-reader</RepositoryUrl>
+    <PackageTags>csharp configuration dotnet-framework appsettings reader</PackageTags>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
