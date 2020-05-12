@@ -21,6 +21,7 @@ namespace Sample
 			var key = "Some_Key_In_AppSettings";
 
 			// This will create a SettingResponse<bool>
+			// All its properties are readonly
 			var boolSetting = key.TryGetBoolSetting();
 
 			// If it was parsed
