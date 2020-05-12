@@ -1,19 +1,20 @@
-namespace Configuration.Reader.Tests
+﻿namespace Configuration.Reader.Tests
 {
-    using Xunit;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+    [TestClass]
     public class ConfigurationManagerExtensionsShould
     {
-        [Fact]
+        [TestMethod]
         public void TryGetBoolSetting()
         {
-            var expected = new SettingResponse<bool>("The key does not exist in the configuration file.");
+            var expected = new SettingResponse<bool>(true, true);
 
             var actual = ConfigurationManagerExtensions.TryGetBoolSetting("Boolean_Test_One");
 
-            Assert.Equal(expected.IsParsed, actual.IsParsed);
-            Assert.Equal(expected.Value, actual.Value);
-            Assert.Equal(expected.Error, actual.Error);
+            Assert.AreEqual(expected.IsParsed, actual.IsParsed);
+            Assert.AreEqual(expected.Value, actual.Value);
+            Assert.AreEqual(expected.Error, actual.Error);
         }
     }
 }
