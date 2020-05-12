@@ -40,3 +40,7 @@ namespace Sample
 	}
 }
 ```
+
+## Nuget ##
+
+[Here](https://www.nuget.org/packages/Configuration.Reader) is the nuget
