@@ -36,3 +36,7 @@ project.lock.json
 *.pyc
 nupkg/
 *.nupkg
+
+# MSTest
+packages
+TestResults
