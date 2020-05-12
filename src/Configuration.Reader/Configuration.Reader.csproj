@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
+    <LangVersion>latest</LangVersion>
     <Authors>Jorge Yañez</Authors>
     <Title>Configuration Reader</Title>
     <Description>Configuration Reader for .NET Framework applications</Description>

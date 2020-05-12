@@ -9,10 +9,10 @@
         public string Error { get; }
 
         private SettingResponse(bool isParsed, TValue value) =>
-            (IsParsed, Value) = (isParsed, value);
+            (IsParsed, Value, Error) = (isParsed, value, string.Empty);
 
         private SettingResponse(string error) =>
-            (IsParsed, Error) = (false, error);
+            (IsParsed, Value, Error) = (false, default(TValue), error);
 
         public static SettingResponse<TValue> Create(bool isParsed, TValue value) =>
             new SettingResponse<TValue>(isParsed, value);
