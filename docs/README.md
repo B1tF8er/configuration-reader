@@ -86,55 +86,55 @@ namespace Sample
         public void HappyPath()
         {
             var boolSetting = "Boolean".TryGetBoolSetting();
-            // boolSetting.Parsed == True; boolSetting.Value == True; boolSetting.Error == string.Empty
+            // boolSetting.IsParsed == True; boolSetting.Value == True; boolSetting.Error == string.Empty
 
             var byteSetting = "Byte".TryGetByteSetting();
-            // byteSetting.Parsed == True; byteSetting.Value == 0123; byteSetting.Error == string.Empty
+            // byteSetting.IsParsed == True; byteSetting.Value == 0123; byteSetting.Error == string.Empty
             
             var charSetting = "Char".TryGetCharSetting();
-            // charSetting.Parsed == True; charSetting.Value == 'a'; charSetting.Error == string.Empty
+            // charSetting.IsParsed == True; charSetting.Value == 'a'; charSetting.Error == string.Empty
             
             var decimalSetting = "Decimal".TryGetDecimalSetting();
-            // decimalSetting.Parsed == True; decimalSetting.Value == 1.9M; decimalSetting.Error == string.Empty
+            // decimalSetting.IsParsed == True; decimalSetting.Value == 1.9M; decimalSetting.Error == string.Empty
             
             var doubleSetting = "Double".TryGetDoubleSetting();
-            // doubleSetting.Parsed == True; doubleSetting.Value == 2.9D; doubleSetting.Error == string.Empty
+            // doubleSetting.IsParsed == True; doubleSetting.Value == 2.9D; doubleSetting.Error == string.Empty
             
             var floatSetting = "Float".TryGetFloatSetting();
-            // floatSetting.Parsed == True; floatSetting.Value == 3.9F; floatSetting.Error == string.Empty
+            // floatSetting.IsParsed == True; floatSetting.Value == 3.9F; floatSetting.Error == string.Empty
             
             var intSetting = "Int".TryGetIntSetting();
-            // intSetting.Parsed == True; intSetting.Value == 4; intSetting.Error == string.Empty
+            // intSetting.IsParsed == True; intSetting.Value == 4; intSetting.Error == string.Empty
             
             var longSetting = "Long".TryGetLongSetting();
-            // longSetting.Parsed == True; longSetting.Value == 5; longSetting.Error == string.Empty
+            // longSetting.IsParsed == True; longSetting.Value == 5; longSetting.Error == string.Empty
             
             var sByteSetting = "SByte".TryGetSByteSetting();
-            // sByteSetting.Parsed == True; sByteSetting.Value == 0123; sByteSetting.Error == string.Empty
+            // sByteSetting.IsParsed == True; sByteSetting.Value == 0123; sByteSetting.Error == string.Empty
             
             var shortSetting = "Short".TryGetShortSetting();
-            // shortSetting.Parsed == True; shortSetting.Value == 6; shortSetting.Error == string.Empty
+            // shortSetting.IsParsed == True; shortSetting.Value == 6; shortSetting.Error == string.Empty
             
             var stringSetting = "String".TryGetStringSetting();
-            // stringSetting.Parsed == True; stringSetting.Value == "test"; stringSetting.Error == string.Empty
+            // stringSetting.IsParsed == True; stringSetting.Value == "test"; stringSetting.Error == string.Empty
             
             var uIntSetting = "UInt".TryGetUIntSetting();
-            // uIntSetting.Parsed == True; uIntSetting.Value == 7; uIntSetting.Error == string.Empty
+            // uIntSetting.IsParsed == True; uIntSetting.Value == 7; uIntSetting.Error == string.Empty
             
             var uLongSetting = "ULong".TryGetULongSetting();
-            // uLongSetting.Parsed == True; uLongSetting.Value == 8L; uLongSetting.Error == string.Empty
+            // uLongSetting.IsParsed == True; uLongSetting.Value == 8L; uLongSetting.Error == string.Empty
             
             var uShortSetting = "UShort".TryGetUShortSetting();
-            // uShortSetting.Parsed == True; uShortSetting.Value == 9; uShortSetting.Error == string.Empty
+            // uShortSetting.IsParsed == True; uShortSetting.Value == 9; uShortSetting.Error == string.Empty
         }
 
         public void Errors()
         {
             var boolSetting = "Test_Error".TryGetBoolSetting();
-            // boolSetting.Parsed == False; boolSetting.Value == default(bool); boolSetting.Error == "The key: TEST_ERROR does not exist in the configuration file."
+            // boolSetting.IsParsed == False; boolSetting.Value == default(bool); boolSetting.Error == "The key: TEST_ERROR does not exist in the configuration file."
 
             var charSetting = "Boolean".TryGetCharSetting();
-            // charSetting.Parsed == False; charSetting.Value == default(char); charSetting.Error == "The configuration value for key: BOOLEAN could not be parsed."
+            // charSetting.IsParsed == False; charSetting.Value == default(char); charSetting.Error == "The configuration value for key: BOOLEAN could not be parsed."
         }
     }
 }
