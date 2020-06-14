@@ -4,7 +4,7 @@ It is a library to help you get in a succinct way the `app.config` values.
 
 It uses .NET 4.8 and only works with .NET Framework projects
 
-The types supported so far are the ones listed [here](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/built-in-types). Except for `object`
+The types supported so far are the ones listed [here](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/built-in-types).
 
 ## How To Use ##
 
@@ -58,6 +58,7 @@ Given an `app.config` file like this:
     <add key="Float" value="3.9"/>
     <add key="Int" value="4"/>
     <add key="Long" value="5"/>
+    <add key="Object" value="{ Number : 10, Text : \"Awesome\" }"/>
     <add key="SByte" value="0123"/>
     <add key="Short" value="6"/>
     <add key="String" value="test"/>
@@ -66,12 +67,26 @@ Given an `app.config` file like this:
     <add key="UShort" value="9"/>
   </appSettings>
 </configuration>
-
 ```
+
+Given a class like this to map the object:
+
+```csharp
+namespace Configuration.Reader
+{
+    public class Sample
+    {
+        public int Number { get; set; }
+
+        public string Text { get; set; }
+    }
+}
+```
+
 The way to access the `app settings` would be like this:
 
 ```csharp
-namespace Sample
+namespace Configuration.Reader
 {
     using static ConfigurationManagerExtensions;
 
@@ -123,6 +138,11 @@ namespace Sample
             var longSetting = "Long".TryGetLongSetting();
             // longSetting.IsParsed == True;
             // longSetting.Value == 5;
+            // longSetting.Error == string.Empty
+
+            var objectSetting = "Object".TryGetObjectSetting<Sample>();
+            // longSetting.IsParsed == True;
+            // longSetting.Value == {Configuration.Reader.Sample};
             // longSetting.Error == string.Empty
             
             var sByteSetting = "SByte".TryGetSByteSetting();
