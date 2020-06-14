@@ -28,6 +28,9 @@
         public static SettingResponse<long> TryGetLongSetting(this string key)
             => key.TryGetSetting(LongParser.Parse);
 
+        public static SettingResponse<TObject> TryGetObjectSetting<TObject>(this string key)
+            => key.TryGetSetting(ObjectParser<TObject>.Parse);
+
         public static SettingResponse<sbyte> TryGetSByteSetting(this string key)
             => key.TryGetSetting(SByteParser.Parse);
 

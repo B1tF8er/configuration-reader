@@ -23,15 +23,14 @@
         public override string ToString() =>
             $"IsParsed: {IsParsed} -- Value: {Value} -- Error: {Error}";
 
-        public override bool Equals(object other)
-            => other is SettingResponse<TValue> settingResponse
-            ? IsParsed == settingResponse.IsParsed
-                && Value.Equals(settingResponse.Value)
-                && Error == settingResponse.Error
-            : false;
+        public override bool Equals(object other) =>
+            other is SettingResponse<TValue> settingResponse
+            && IsParsed == settingResponse.IsParsed
+            && Value.Equals(settingResponse.Value)
+            && Error == settingResponse.Error;
 
-        public override int GetHashCode()
-            => IsParsed.GetHashCode()
+        public override int GetHashCode() =>
+            IsParsed.GetHashCode()
             ^ Value.GetHashCode()
             ^ Error.GetHashCode();
     }

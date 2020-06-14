@@ -87,6 +87,17 @@
         }
 
         [TestMethod]
+        public void GetObjectSetting()
+        {
+            var sample = new Sample { Number = 10, Text = "Awesome" };
+            var expected = SettingResponse<Sample>.Create(true, sample);
+
+            var actual = "Test_Object".TryGetObjectSetting<Sample>();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
         public void GetSByteSetting()
         {
             var expected = SettingResponse<sbyte>.Create(true, 0123);
