@@ -6,8 +6,9 @@
     {
         internal static Func<string, SettingResponse<string>> Parse =>
             (configurationValue) =>
-            {
-                return SettingResponse<string>.Create(true, configurationValue);
-            };
+                SettingResponse<string>.Create(
+                    true,
+                    configurationValue
+                );
     }
 }

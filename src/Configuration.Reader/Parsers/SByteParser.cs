@@ -6,9 +6,9 @@
     {
         internal static Func<string, SettingResponse<sbyte>> Parse =>
             (configurationValue) =>
-            {
-                var parsed = sbyte.TryParse(configurationValue, out var someSByte);
-                return SettingResponse<sbyte>.Create(parsed, someSByte);
-            };
+                SettingResponse<sbyte>.Create(
+                    sbyte.TryParse(configurationValue, out var someSByte),
+                    someSByte
+                );
     }
 }

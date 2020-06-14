@@ -6,9 +6,9 @@
     {
         internal static Func<string, SettingResponse<char>> Parse =>
             (configurationValue) =>
-            {
-                var parsed = char.TryParse(configurationValue, out var someChar);
-                return SettingResponse<char>.Create(parsed, someChar);
-            };
+                SettingResponse<char>.Create(
+                    char.TryParse(configurationValue, out var someChar),
+                    someChar
+                );
     }
 }

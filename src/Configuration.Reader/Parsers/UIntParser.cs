@@ -6,9 +6,9 @@
     {
         internal static Func<string, SettingResponse<uint>> Parse =>
             (configurationValue) =>
-            {
-                var parsed = uint.TryParse(configurationValue, out var someUInt);
-                return SettingResponse<uint>.Create(parsed, someUInt);
-            };
+                SettingResponse<uint>.Create(
+                    uint.TryParse(configurationValue, out var someUInt),
+                    someUInt
+                );
     }
 }
