@@ -178,5 +178,16 @@
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void NotParseInvalidObject()
+        {
+            var key = "Test_Char";
+            var expected = SettingResponse<Sample>.Create(key.ValueNotParsed());
+
+            var actual = key.TryGetObjectSetting<Sample>();
+
+            Assert.AreEqual(expected.ToString(), actual.ToString());
+        }
     }
 }

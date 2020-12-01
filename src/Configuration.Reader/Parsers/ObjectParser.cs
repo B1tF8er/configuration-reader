@@ -7,8 +7,8 @@
         internal static Func<string, SettingResponse<TObject>> Parse =>
             (configurationValue) =>
                 SettingResponse<TObject>.Create(
-                    true,
-                    configurationValue.DeserializeTo<TObject>()
+                    configurationValue.TryDeserializeTo<TObject>(out var someObject),
+                    someObject
                 );
     }
 }
