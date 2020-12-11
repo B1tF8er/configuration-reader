@@ -160,7 +160,7 @@
         [TestMethod]
         public void NotFindInvalidKey()
         {
-            var key = "Test_NotFound";
+            const string key = "Test_NotFound";
             var expected = SettingResponse<ushort>.Create(key.DoesNotExist());
 
             var actual = key.TryGetUShortSetting();
@@ -171,7 +171,7 @@
         [TestMethod]
         public void NotParseInvalidValue()
         {
-            var key = "Test_Char";
+            const string key = "Test_Char";
             var expected = SettingResponse<bool>.Create(key.ValueNotParsed());
 
             var actual = key.TryGetBoolSetting();
@@ -182,7 +182,7 @@
         [TestMethod]
         public void NotParseInvalidObject()
         {
-            var key = "Test_Char";
+            const string key = "Test_Char";
             var expected = SettingResponse<Sample>.Create(key.ValueNotParsed());
 
             var actual = key.TryGetObjectSetting<Sample>();

@@ -1,6 +1,6 @@
 ﻿namespace Configuration.Reader
 {
-    public class SettingResponse<TValue>
+    public sealed class SettingResponse<TValue>
     {
         public bool IsParsed { get; }
 
