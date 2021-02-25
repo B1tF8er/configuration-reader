@@ -2,6 +2,7 @@
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using static ConfigurationManagerExtensions;
+    using static Constants.TestValues;
 
     [TestClass]
     public class ConfigurationManagerExtensionsShould
@@ -11,7 +12,7 @@
         {
             var expected = SettingResponse<bool>.Create(true, true);
 
-            var actual = "Test_Boolean".TryGetBoolSetting();
+            var actual = Boolean.TryGetBoolSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -21,7 +22,7 @@
         {
             var expected = SettingResponse<byte>.Create(true, 0123);
 
-            var actual = "Test_Byte".TryGetByteSetting();
+            var actual = Byte.TryGetByteSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -31,7 +32,7 @@
         {
             var expected = SettingResponse<char>.Create(true, 'a');
 
-            var actual = "Test_Char".TryGetCharSetting();
+            var actual = Char.TryGetCharSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -41,7 +42,7 @@
         {
             var expected = SettingResponse<decimal>.Create(true, 1.9M);
 
-            var actual = "Test_Decimal".TryGetDecimalSetting();
+            var actual = Decimal.TryGetDecimalSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -51,7 +52,7 @@
         {
             var expected = SettingResponse<double>.Create(true, 2.9D);
 
-            var actual = "Test_Double".TryGetDoubleSetting();
+            var actual = Double.TryGetDoubleSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -61,7 +62,7 @@
         {
             var expected = SettingResponse<float>.Create(true, 3.9F);
 
-            var actual = "Test_Float".TryGetFloatSetting();
+            var actual = Float.TryGetFloatSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -71,7 +72,7 @@
         {
             var expected = SettingResponse<int>.Create(true, 4);
 
-            var actual = "Test_Int".TryGetIntSetting();
+            var actual = Int.TryGetIntSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -81,7 +82,7 @@
         {
             var expected = SettingResponse<long>.Create(true, 5L);
 
-            var actual = "Test_Long".TryGetLongSetting();
+            var actual = Long.TryGetLongSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -92,7 +93,7 @@
             var sample = new Sample { Number = 10, Text = "Awesome" };
             var expected = SettingResponse<Sample>.Create(true, sample);
 
-            var actual = "Test_Object".TryGetObjectSetting<Sample>();
+            var actual = Object.TryGetObjectSetting<Sample>();
 
             Assert.AreEqual(expected, actual);
         }
@@ -102,7 +103,7 @@
         {
             var expected = SettingResponse<sbyte>.Create(true, 0123);
 
-            var actual = "Test_SByte".TryGetSByteSetting();
+            var actual = SByte.TryGetSByteSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -112,7 +113,7 @@
         {
             var expected = SettingResponse<short>.Create(true, 6);
 
-            var actual = "Test_Short".TryGetShortSetting();
+            var actual = Short.TryGetShortSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -122,7 +123,7 @@
         {
             var expected = SettingResponse<string>.Create(true, "test");
 
-            var actual = "Test_String".TryGetStringSetting();
+            var actual = String.TryGetStringSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -132,7 +133,7 @@
         {
             var expected = SettingResponse<uint>.Create(true, 7);
 
-            var actual = "Test_UInt".TryGetUIntSetting();
+            var actual = UInt.TryGetUIntSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -142,7 +143,7 @@
         {
             var expected = SettingResponse<ulong>.Create(true, 8L);
 
-            var actual = "Test_ULong".TryGetULongSetting();
+            var actual = ULong.TryGetULongSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -152,7 +153,7 @@
         {
             var expected = SettingResponse<ushort>.Create(true, 9);
 
-            var actual = "Test_UShort".TryGetUShortSetting();
+            var actual = UShort.TryGetUShortSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -160,10 +161,9 @@
         [TestMethod]
         public void NotFindInvalidKey()
         {
-            const string key = "Test_NotFound";
-            var expected = SettingResponse<ushort>.Create(key.DoesNotExist());
+            var expected = SettingResponse<ushort>.Create(NotFound.DoesNotExist());
 
-            var actual = key.TryGetUShortSetting();
+            var actual = NotFound.TryGetUShortSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -171,10 +171,9 @@
         [TestMethod]
         public void NotParseInvalidValue()
         {
-            const string key = "Test_Char";
-            var expected = SettingResponse<bool>.Create(key.ValueNotParsed());
+            var expected = SettingResponse<bool>.Create(Char.ValueNotParsed());
 
-            var actual = key.TryGetBoolSetting();
+            var actual = Char.TryGetBoolSetting();
 
             Assert.AreEqual(expected, actual);
         }
@@ -182,10 +181,9 @@
         [TestMethod]
         public void NotParseInvalidObject()
         {
-            const string key = "Test_Char";
-            var expected = SettingResponse<Sample>.Create(key.ValueNotParsed());
+            var expected = SettingResponse<Sample>.Create(Char.ValueNotParsed());
 
-            var actual = key.TryGetObjectSetting<Sample>();
+            var actual = Char.TryGetObjectSetting<Sample>();
 
             Assert.AreEqual(expected.ToString(), actual.ToString());
         }
