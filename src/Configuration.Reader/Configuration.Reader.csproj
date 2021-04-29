@@ -6,7 +6,7 @@
     <Authors>Jorge Yañez</Authors>
     <Title>Configuration Reader</Title>
     <Description>Configuration Reader for .NET Framework applications</Description>
-    <PackageVersion>0.0.1-alpha</PackageVersion>
+    <PackageVersion>0.0.1</PackageVersion>
     <PackageProjectUrl>https://github.com/B1tF8er/configuration-reader</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/B1tF8er/configuration-reader/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/B1tF8er/configuration-reader</RepositoryUrl>
